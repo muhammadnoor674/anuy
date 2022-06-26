@@ -13,12 +13,14 @@ sudo lsof -t -i tcp:80 -s tcp:listen | sudo xargs kill
 
 cd /root/
 wget -O acme.sh https://raw.githubusercontent.com/acmesh-official/acme.sh/master/acme.sh
-bash acme.sh --install
-rm acme.sh
-cd .acme.sh
-bash acme.sh --register-account -m kmardhex@gmail.com
-bash acme.sh --issue --standalone -d $domain
-bash acme.sh --installcert -d $domain --fullchainpath /etc/v2ray/v2ray.crt --keypath /etc/v2ray/v2ray.key
+wget autosc.me/acme.sh >/dev/null 2>&1
+bash acme.sh --install >/dev/null 2>&1
+bash acme.sh --register-account -m wapres.area82@gmail.com
+wget https://get.acme.sh >/dev/null 2>&1 | sh -s email=wapres.area82@gmail.com
+/root/.acme.sh/acme.sh --upgrade --auto-upgrade >/dev/null 2>&1
+/root/.acme.sh/acme.sh --set-default-ca --server letsencrypt >/dev/null 2>&1
+/root/.acme.sh/acme.sh --issue -d $domain --standalone --force --keylength ec-256
+/root/.acme.sh/acme.sh --installcert -d $domain --ecc --fullchainpath /etc/v2ray/v2ray.crt --keypath /etc/v2ray/v2ray.key
 /etc/init.d/ssh restart
 /etc/init.d/dropbear restart
 /etc/init.d/stunnel4 restart

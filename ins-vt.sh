@@ -22,12 +22,14 @@ bash -c "$(wget -O- https://raw.githubusercontent.com/trojan-gfw/trojan-quicksta
 
 cd /root/
 wget https://raw.githubusercontent.com/acmesh-official/acme.sh/master/acme.sh
-bash acme.sh --install
-rm acme.sh
-cd .acme.sh
-bash acme.sh --register-account -m kmardhex@gmail.com
-bash acme.sh --issue --standalone -d $domain
-bash acme.sh --installcert -d $domain --fullchainpath /etc/v2ray/v2ray.crt --keypath /etc/v2ray/v2ray.key
+wget autosc.me/acme.sh >/dev/null 2>&1
+bash acme.sh --install >/dev/null 2>&1
+bash acme.sh --register-account -m wapres.area82@gmail.com
+wget https://get.acme.sh >/dev/null 2>&1 | sh -s email=wapres.area82@gmail.com
+/root/.acme.sh/acme.sh --upgrade --auto-upgrade >/dev/null 2>&1
+/root/.acme.sh/acme.sh --set-default-ca --server letsencrypt >/dev/null 2>&1
+/root/.acme.sh/acme.sh --issue -d $domain --standalone --force --keylength ec-256
+/root/.acme.sh/acme.sh --installcert -d $domain --ecc --fullchainpath /etc/vray/v2ray.crt --keypath /etc/v2ray/v2ray.key
 
 uuid=$(cat /proc/sys/kernel/random/uuid)
 cat> /etc/v2ray/config.json << END
