@@ -22,7 +22,6 @@ bash -c "$(wget -O- https://raw.githubusercontent.com/trojan-gfw/trojan-quicksta
 
 cd /root/
 wget https://raw.githubusercontent.com/acmesh-official/acme.sh/master/acme.sh
-wget autosc.me/acme.sh >/dev/null 2>&1
 bash acme.sh --install >/dev/null 2>&1
 bash acme.sh --register-account -m wapres.area82@gmail.com
 wget https://get.acme.sh >/dev/null 2>&1 | sh -s email=wapres.area82@gmail.com
