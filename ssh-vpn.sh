@@ -233,10 +233,10 @@ echo "Banner /etc/issue.net" >>/etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
 cd
 #Install Edu
-wget https://raw.githubusercontent.com/kmardhex/anu/main/websocket.sh && chmod +x websocket.sh && ./websocket.sh
-wget https://raw.githubusercontent.com/kmardhex/anu/main/edu.sh && chmod +x edu.sh && screen -S edu ./edu.sh
-rm -f /root/edu.sh
-rm -f /root/websocket.sh
+#wget https://raw.githubusercontent.com/kmardhex/anu/main/websocket.sh && chmod +x websocket.sh && ./websocket.sh
+#wget https://raw.githubusercontent.com/kmardhex/anu/main/edu.sh && chmod +x edu.sh && screen -S edu ./edu.sh
+#rm -f /root/edu.sh
+#rm -f /root/websocket.sh
 cd
 # blockir torrent
 iptables -A FORWARD -m string --string "get_peers" --algo bm -j DROP
