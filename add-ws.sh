@@ -9,33 +9,49 @@ echo "Checking VPS"
 clear
 source /var/lib/premium-script/ipvps.conf
 if [[ "$IP" = "" ]]; then
+clear
 domain=$(cat /etc/v2ray/domain)
-else
-domain=$IP
-fi
 tls="$(cat ~/log-install.txt | grep -w "Vmess TLS" | cut -d: -f2|sed 's/ //g')"
-none="$(cat ~/log-install.txt | grep -w "Vmess None TLS" | cut -d: -f2|sed 's/ //g')"
+nontls="$(cat ~/log-install.txt | grep -w "Vmess None TLS" | cut -d: -f2|sed 's/ //g')"
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
-		read -rp "User: " -e user
-		CLIENT_EXISTS=$(grep -w $user /etc/v2ray/none.json | wc -l)
+		read -rp "Username : " -e user
+		CLIENT_EXISTS=$(grep -w $user /etc/v2ray/config.json | wc -l)
 
 		if [[ ${CLIENT_EXISTS} == '1' ]]; then
 			echo ""
-			echo "A client with the specified name was already created, please choose another name."
+			echo -e "Username ${RED}${CLIENT_NAME}${NC} Already On VPS Please Choose Another"
 			exit 1
 		fi
 	done
 uuid=$(cat /proc/sys/kernel/random/uuid)
-read -p "Expired (days): " masaaktif
+read -p "Expired (Days) : " masaaktif
+hariini=`date -d "0 days" +"%Y-%m-%d"`
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
-sed -i '/#none$/a\### '"$user $exp"'\
-},{"id": "'""$uuid""'","alterId": '"0"',"email": "'""$user""'"' /etc/v2ray/none.json
-cat>/etc/v2ray/$user-none.json<<EOF
+sed -i '/#v2ray-vmess-tls$/a\### '"$user $exp"'\
+},{"id": "'""$uuid""'"' /etc/v2ray/config.json
+sed -i '/#v2ray-vmess-nontls$/a\### '"$user $exp"'\
+},{"id": "'""$uuid""'"' /etc/v2ray/config.json
+cat>/etc/v2ray/vmess-$user-tls.json<<EOF
+      {
+      "v": "2",
+      "ps": "${user}",
+      "add": "${domain}",
+      "port": "${tls}",
+      "id": "${uuid}",
+      "aid": "0",
+      "net": "ws",
+      "path": "/MDXCloud",
+      "type": "none",
+      "host": "",
+      "tls": "tls"
+}
+EOF
+cat>/etc/v2ray/vmess-$user-nontls.json<<EOF
       {
       "v": "2",
       "ps": "${user}",
       "add": ".mdxcloud.net",
-      "port": "${none}",
+      "port": "${nontls}",
       "id": "${uuid}",
       "aid": "0",
       "net": "ws",
@@ -45,26 +61,32 @@ cat>/etc/v2ray/$user-none.json<<EOF
       "tls": "none"
 }
 EOF
+vmess_base641=$( base64 -w 0 <<< $vmess_json1)
 vmess_base642=$( base64 -w 0 <<< $vmess_json2)
-vmesslink2="vmess://$(base64 -w 0 /etc/v2ray/$user-none.json)"
-systemctl restart v2ray
-systemctl restart v2ray@none
+v2ray1="vmess://$(base64 -w 0 /etc/v2ray/vmess-$user-tls.json)"
+v2ray2="vmess://$(base64 -w 0 /etc/v2ray/vmess-$user-nontls.json)"
+rm -rf /etc/v2ray/vmess-$user-tls.json
+rm -rf /etc/v2ray/vmess-$user-nontls.json
+systemctl restart v2ray.service
 service cron restart
 clear
 echo -e ""
-echo -e "==========-V2RAY/VMESS-=========="
-echo -e "Remarks        : ${user}"
-echo -e "CITY           : $CITY"
-echo -e "ISP            : $ISP"
-echo -e "Domain         : ${domain}"
-echo -e "port none TLS  : ${none}"
-echo -e "id             : ${uuid}"
-echo -e "alterId        : 0"
-echo -e "Security       : auto"
-echo -e "network        : ws"
-echo -e "path           : /MDXCloud"
-echo -e "================================="
-echo -e "link none TLS  : ${vmesslink2}"
-echo -e "================================="
-echo -e "Expired On     : $exp"
-echo -e "AutoScript By Mardhex"
+echo -e "==========VMESS========="
+echo -e "Remarks     : ${user}"
+echo -e "IP/Host     : ${MYIP}"
+echo -e "Address     : ${domain}"
+echo -e "Port TLS    : ${tls}"
+echo -e "Port No TLS : ${nontls}"
+echo -e "User ID     : ${uuid}"
+echo -e "Alter ID    : 0"
+echo -e "Security    : auto"
+echo -e "Network     : ws"
+echo -e "Path        : /MDXCloud"
+echo -e "Created     : $hariini"
+echo -e "Expired     : $exp"
+echo -e "========================="
+echo -e "Link TLS    : ${v2ray1}"
+echo -e "========================="
+echo -e "Link No TLS : ${v2ray2}"
+echo -e "========================="
+echo -e "==Script By Mardhex 2022=="
