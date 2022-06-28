@@ -40,7 +40,7 @@ cat> /etc/v2ray/config.json << END
   },
   "inbounds": [
     {
-      "port": 443,
+      "port": 8443,
       "protocol": "vmess",
       "settings": {
         "clients": [
@@ -499,7 +499,7 @@ cd /usr/bin
 wget -O add-ws "https://raw.githubusercontent.com/kmardhex/anu/main/add-ws.sh"
 wget -O add-vless "https://raw.githubusercontent.com/kmardhex/anu/main/add-vless.sh"
 wget -O add-tr "https://raw.githubusercontent.com/kmardhex/anu/main/add-tr.sh"
-#wget -O add-wstls "https://raw.githubusercontent.com/kmardhex/anu/main/add-wstls.sh"
+wget -O add-wstls "https://raw.githubusercontent.com/kmardhex/anu/main/add-wstls.sh"
 wget -O del-ws "https://raw.githubusercontent.com/kmardhex/anu/main/del-ws.sh"
 wget -O del-vless "https://raw.githubusercontent.com/kmardhex/anu/main/del-vless.sh"
 wget -O del-non "https://raw.githubusercontent.com/kmardhex/anu/main/del-non.sh"
@@ -514,7 +514,7 @@ wget -O renew-vless "https://raw.githubusercontent.com/kmardhex/anu/main/renew-v
 wget -O renew-tr "https://raw.githubusercontent.com/kmardhex/anu/main/renew-tr.sh"
 wget -O certv2ray "https://raw.githubusercontent.com/kmardhex/anu/main/cert.sh"
 chmod +x add-ws
-#chmod +x add-wstls
+chmod +x add-wstls
 chmod +x add-vless
 chmod +x add-tr
 chmod +x del-non
