@@ -45,7 +45,7 @@ cat <<EOF
 L2TP/IPSEC PSK VPN
 
 Server IP    : $PUBLIC_IP
-IPsec PSK    : sntzxvpn
+IPsec PSK    : SantzXteam
 Username     : $VPN_USER
 Password     : $VPN_PASSWORD
 Expired ON   : $exp
