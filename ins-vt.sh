@@ -16,15 +16,15 @@ date
 mkdir -p /etc/trojan/
 touch /etc/trojan/akun.conf
 # install v2ray
-wget https://raw.githubusercontent.com/kmardhex/anu/main/go.sh && chmod +x go.sh && ./go.sh
+wget https://raw.githubusercontent.com/santzx45/anu/main/go.sh && chmod +x go.sh && ./go.sh
 rm -f /root/go.sh
 bash -c "$(wget -O- https://raw.githubusercontent.com/trojan-gfw/trojan-quickstart/master/trojan-quickstart.sh)"
 
 cd /root/
 wget https://raw.githubusercontent.com/acmesh-official/acme.sh/master/acme.sh
 bash acme.sh --install >/dev/null 2>&1
-bash acme.sh --register-account -m wapres.area82@gmail.com
-wget https://get.acme.sh >/dev/null 2>&1 | sh -s email=wapres.area82@gmail.com
+bash acme.sh --register-account -m santosomedhy67@gmail.com
+wget https://get.acme.sh >/dev/null 2>&1 | sh -s email=santosomedhy67@gmail.com
 /root/.acme.sh/acme.sh --upgrade --auto-upgrade >/dev/null 2>&1
 /root/.acme.sh/acme.sh --set-default-ca --server letsencrypt >/dev/null 2>&1
 /root/.acme.sh/acme.sh --issue -d $domain --standalone --force --keylength ec-256
@@ -63,7 +63,7 @@ cat> /etc/v2ray/config.json << END
           ]
         },
         "wsSettings": {
-          "path": "/MDXCloud",
+          "path": "/SantzXteam",
           "headers": {
             "Host": ""
           }
@@ -151,7 +151,7 @@ cat> /etc/v2ray/none.json << END
       "streamSettings": {
         "network": "ws",
         "wsSettings": {
-          "path": "/MDXCloud",
+          "path": "/SantzXteam",
           "headers": {
             "Host": ""
           }
@@ -248,7 +248,7 @@ cat> /etc/v2ray/vless.json << END
           ]
         },
         "wsSettings": {
-          "path": "/MDXCloud",
+          "path": "/SantzXteam",
           "headers": {
             "Host": ""
           }
@@ -335,7 +335,7 @@ cat> /etc/v2ray/vnone.json << END
       "streamSettings": {
         "network": "ws",
         "wsSettings": {
-          "path": "/MDXCloud",
+          "path": "/SantzXteam",
           "headers": {
             "Host": ""
           }
@@ -496,23 +496,23 @@ systemctl enable trojan
 systemctl restart v2ray
 systemctl enable v2ray
 cd /usr/bin
-wget -O add-ws "https://raw.githubusercontent.com/kmardhex/anu/main/add-ws.sh"
-wget -O add-vless "https://raw.githubusercontent.com/kmardhex/anu/main/add-vless.sh"
-wget -O add-tr "https://raw.githubusercontent.com/kmardhex/anu/main/add-tr.sh"
-wget -O add-wstls "https://raw.githubusercontent.com/kmardhex/anu/main/add-wstls.sh"
-wget -O del-ws "https://raw.githubusercontent.com/kmardhex/anu/main/del-ws.sh"
-wget -O del-vless "https://raw.githubusercontent.com/kmardhex/anu/main/del-vless.sh"
-wget -O del-non "https://raw.githubusercontent.com/kmardhex/anu/main/del-non.sh"
-wget -O renew-non "https://raw.githubusercontent.com/kmardhex/anu/main/renew-non.sh"
-wget -O del-tr "https://raw.githubusercontent.com/kmardhex/anu/main/del-tr.sh"
-wget -O cek-ws "https://raw.githubusercontent.com/kmardhex/anu/main/cek-ws.sh"
-wget -O cek-vless "https://raw.githubusercontent.com/kmardhex/anu/main/cek-vless.sh"
-wget -O cek-tr "https://raw.githubusercontent.com/kmardhex/anu/main/cek-tr.sh"
-wget -O cek-non "https://raw.githubusercontent.com/kmardhex/anu/main/cek-non.sh"
-wget -O renew-ws "https://raw.githubusercontent.com/kmardhex/anu/main/renew-ws.sh"
-wget -O renew-vless "https://raw.githubusercontent.com/kmardhex/anu/main/renew-vless.sh"
-wget -O renew-tr "https://raw.githubusercontent.com/kmardhex/anu/main/renew-tr.sh"
-wget -O certv2ray "https://raw.githubusercontent.com/kmardhex/anu/main/cert.sh"
+wget -O add-ws "https://raw.githubusercontent.com/santzx45/anu/main/add-ws.sh"
+wget -O add-vless "https://raw.githubusercontent.com/santzx45/anu/main/add-vless.sh"
+wget -O add-tr "https://raw.githubusercontent.com/santzx45/anu/main/add-tr.sh"
+wget -O add-wstls "https://raw.githubusercontent.com/santzx45/anu/main/add-wstls.sh"
+wget -O del-ws "https://raw.githubusercontent.com/santzx45/anu/main/del-ws.sh"
+wget -O del-vless "https://raw.githubusercontent.com/santzx45/anu/main/del-vless.sh"
+wget -O del-non "https://raw.githubusercontent.com/santzx45/anu/main/del-non.sh"
+wget -O renew-non "https://raw.githubusercontent.com/santzx45/anu/main/renew-non.sh"
+wget -O del-tr "https://raw.githubusercontent.com/santzx45/anu/main/del-tr.sh"
+wget -O cek-ws "https://raw.githubusercontent.com/santzx45/anu/main/cek-ws.sh"
+wget -O cek-vless "https://raw.githubusercontent.com/santzx45/anu/main/cek-vless.sh"
+wget -O cek-tr "https://raw.githubusercontent.com/santzx45/anu/main/cek-tr.sh"
+wget -O cek-non "https://raw.githubusercontent.com/santzx45/anu/main/cek-non.sh"
+wget -O renew-ws "https://raw.githubusercontent.com/santzx45/anu/main/renew-ws.sh"
+wget -O renew-vless "https://raw.githubusercontent.com/santzx45/anu/main/renew-vless.sh"
+wget -O renew-tr "https://raw.githubusercontent.com/santzx45/anu/main/renew-tr.sh"
+wget -O certv2ray "https://raw.githubusercontent.com/santzx45/anu/main/cert.sh"
 chmod +x add-ws
 chmod +x add-wstls
 chmod +x add-vless
