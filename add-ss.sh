@@ -92,4 +92,4 @@ clear
 	echo -e "==========================="
 	echo -e "Link SS HTTP    : $linkss2"
 	echo -e "==========================="
-	echo -e "AutoScript By Mardhex"
+	echo -e "AutoScript By SantzX Vpn Store"
