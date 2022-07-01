@@ -34,12 +34,12 @@ cat>/etc/v2ray/$user-none.json<<EOF
       {
       "v": "2",
       "ps": "${user}",
-      "add": ".mdxcloud.net",
+      "add": ".santzx.com",
       "port": "${none}",
       "id": "${uuid}",
       "aid": "0",
       "net": "ws",
-      "path": "/MDXCloud",
+      "path": "/SantzXteam",
       "type": "none",
       "host": "${domain}",
       "tls": "none"
@@ -62,9 +62,9 @@ echo -e "id             : ${uuid}"
 echo -e "alterId        : 0"
 echo -e "Security       : auto"
 echo -e "network        : ws"
-echo -e "path           : /MDXCloud"
+echo -e "path           : /SantzXteam"
 echo -e "================================="
 echo -e "link none TLS  : ${vmesslink2}"
 echo -e "================================="
 echo -e "Expired On     : $exp"
-echo -e "AutoScript By Mardhex"
+echo -e "AutoScript By SantzX Vpn Store"
