@@ -14,8 +14,8 @@ sudo lsof -t -i tcp:80 -s tcp:listen | sudo xargs kill
 cd /root/
 wget -O acme.sh https://raw.githubusercontent.com/acmesh-official/acme.sh/master/acme.sh
 bash acme.sh --install >/dev/null 2>&1
-bash acme.sh --register-account -m wapres.area82@gmail.com
-wget https://get.acme.sh >/dev/null 2>&1 | sh -s email=wapres.area82@gmail.com
+bash acme.sh --register-account -m santosomedhy67@gmail.com
+wget https://get.acme.sh >/dev/null 2>&1 | sh -s email=santosomedhy67@gmail.com
 /root/.acme.sh/acme.sh --upgrade --auto-upgrade >/dev/null 2>&1
 /root/.acme.sh/acme.sh --set-default-ca --server letsencrypt >/dev/null 2>&1
 /root/.acme.sh/acme.sh --issue -d $domain --standalone --force --keylength ec-256
