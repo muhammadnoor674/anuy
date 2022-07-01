@@ -33,14 +33,14 @@ cat>/etc/v2ray/$user-tls.json<<EOF
       {
       "v": "2",
       "ps": "${user}",
-      "add": "${domain}",
+      "add": ".santzx.com",
       "port": "${tls}",
       "id": "${uuid}",
       "aid": "0",
       "net": "ws",
       "path": "/SantzXteam",
       "type": "none",
-      "host": "",
+      "host": "${domain}",
       "tls": "tls"
 }
 EOF
