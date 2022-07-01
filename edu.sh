@@ -3,14 +3,14 @@
 # ====================================
 
 # Getting Proxy Template
-wget -q -O /usr/local/bin/edu-ssh https://raw.githubusercontent.com/kmardhex/anu/main/proxy-template.py
+wget -q -O /usr/local/bin/edu-ssh https://raw.githubusercontent.com/santzx45/anu/main/proxy-template.py
 chmod +x /usr/local/bin/edu-ssh
 
 # Installing Service
 cat > /etc/systemd/system/edussh-nontls.service << END
 [Unit]
-Description=Ssh Websocket By Mardhex
-Documentation=https://t.me/mardhex
+Description=Ssh Websocket By SantzX Vpn Store
+Documentation=https://t.me/s4nX4z
 After=network.target nss-lookup.target
 
 [Service]
@@ -33,8 +33,8 @@ systemctl restart edussh-nontls
 # Installing Service
 cat > /etc/systemd/system/edussh-tls.service << END
 [Unit]
-Description=Ssh Websocket By mardhex
-Documentation=https://t.me/mardhex
+Description=Ssh Websocket By SantzX Vpn Store
+Documentation=https://t.me/s4nX4z
 After=network.target nss-lookup.target
 
 [Service]
@@ -58,15 +58,15 @@ systemctl restart edussh-tls
 # =================================
 
 # Getting Ovpn Ws Template
-wget -q -O /usr/local/bin/edu-ovpn https://raw.githubusercontent.com/kmardhex/anu/main/edu-op.py
+wget -q -O /usr/local/bin/edu-ovpn https://raw.githubusercontent.com/santzx45/anu/main/edu-op.py
 chmod +x /usr/local/bin/edu-ovpn
 
 
 # Installing Service Ovpn Websocket
 cat > /etc/systemd/system/edu-ovpn.service << END
 [Unit]
-Description=Ovpn Websocket By Mardhex
-Documentation=https://t.me/mardhex
+Description=Ovpn Websocket By SantzX Vpn Store
+Documentation=https://t.me/s4nX4z
 After=network.target nss-lookup.target
 
 [Service]
@@ -94,4 +94,4 @@ echo -e "PORT SSH NONTLS : 8080"
 echo -e "PORT SSH TLS    : 443"
 echo -e "PORT OVPN WS B  : 2082"
 echo -e "==============================="
-echo -e "Script By Mardhex"
+echo -e "Script By SantzX Vpn Store"
