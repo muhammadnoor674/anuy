@@ -32,8 +32,8 @@ sed -i '/#tls$/a\### '"$user $exp"'\
 },{"id": "'""$uuid""'","email": "'""$user""'"' /etc/v2ray/vless.json
 sed -i '/#none$/a\### '"$user $exp"'\
 },{"id": "'""$uuid""'","email": "'""$user""'"' /etc/v2ray/vnone.json
-vlesslink1="vless://${uuid}@${domain}:$tls?path=/MDXCloud&security=tls&encryption=none&type=ws#${user}"
-vlesslink2="vless://${uuid}@${domain}:$none?path=/MDXCloud&encryption=none&type=ws#${user}"
+vlesslink1="vless://${uuid}@${domain}:$tls?path=/SantzXteam&security=tls&encryption=none&type=ws#${user}"
+vlesslink2="vless://${uuid}@${domain}:$none?path=/SantzXteam&encryption=none&type=ws#${user}"
 systemctl restart v2ray@vless
 systemctl restart v2ray@vnone
 clear
@@ -48,11 +48,11 @@ echo -e "port none TLS  : $none"
 echo -e "id             : ${uuid}"
 echo -e "Encryption     : none"
 echo -e "network        : ws"
-echo -e "path           : /MDXCloud"
+echo -e "path           : /SantzXteam"
 echo -e "================================="
 echo -e "link TLS       : ${vlesslink1}"
 echo -e "================================="
 echo -e "link none TLS  : ${vlesslink2}"
 echo -e "================================="
 echo -e "Expired On     : $exp"
-echo -e "AutoScript By Mardhex"
+echo -e "AutoScript By SantzX Vpn Store"
