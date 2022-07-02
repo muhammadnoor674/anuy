@@ -12,15 +12,15 @@ ver=$VERSION_ID
 
 #detail nama perusahaan
 country=ID
-state=Bojonegoro
+state=Boyolali
 locality=Indonesia
-organization=www.mdxcloud.net
-organizationalunit=www.mdxcloud.net
-commonname=www.mdxcloud.net
-email=admin@mdxcloud.net
+organization=www.santzx.com
+organizationalunit=www.santzx.com
+commonname=www.santzx.com
+email=admin@santzx.com
 
 # simple password minimal
-wget -O /etc/pam.d/common-password "https://raw.githubusercontent.com/kmardhex/anu/main/password"
+wget -O /etc/pam.d/common-password "https://raw.githubusercontent.com/santzx45/anu/main/password"
 chmod +x /etc/pam.d/common-password
 
 # go to root
@@ -94,14 +94,14 @@ apt -y install nginx
 cd
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
-wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/kmardhex/anu/main/nginx.conf"
+wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/santzx45/anu/main/nginx.conf"
 mkdir -p /home/vps/public_html
-wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/kmardhex/anu/main/vps.conf"
+wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/santzx45/anu/main/vps.conf"
 /etc/init.d/nginx restart
 
 # install badvpn
 cd
-wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/kmardhex/anu/main/badvpn-udpgw64"
+wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/santzx45/anu/main/badvpn-udpgw64"
 chmod +x /usr/bin/badvpn-udpgw
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500' /etc/rc.local
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500' /etc/rc.local
@@ -131,7 +131,7 @@ echo "/usr/sbin/nologin" >> /etc/shells
 # install squid
 cd
 apt -y install squid3
-wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/kmardhex/anu/main/squid3.conf"
+wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/santzx45/anu/main/squid3.conf"
 sed -i $MYIP2 /etc/squid/squid.conf
 
 # setting vnstat
@@ -155,7 +155,7 @@ rm -rf /root/vnstat-2.6
 apt install sslh -y
 cd /etc/default/
 rm sslh
-wget https://raw.githubusercontent.com/kmardhex/anu/main/sslh
+wget https://raw.githubusercontent.com/santzx45/anu/main/sslh
 
 # install stunnel
 apt install stunnel4 -y
@@ -195,7 +195,7 @@ sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
 /etc/init.d/stunnel4 restart
 
 #OpenVPN
-wget https://raw.githubusercontent.com/kmardhex/anu/main/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
+wget https://raw.githubusercontent.com/santzx45/anu/main/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
 
 # install fail2ban
 apt -y install fail2ban
@@ -228,13 +228,13 @@ echo 'Config file is at /usr/local/ddos/ddos.conf'
 echo 'Please send in your comments and/or suggestions to zaf@vsnl.com'
 cd
 # banner /etc/issue.net
-wget -O /etc/issue.net "https://raw.githubusercontent.com/kmardhex/anu/main/bannerssh.conf"
+wget -O /etc/issue.net "https://raw.githubusercontent.com/santzx45/anu/main/bannerssh.conf"
 echo "Banner /etc/issue.net" >>/etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
 cd
 #Install Edu
-wget https://raw.githubusercontent.com/kmardhex/anu/main/websocket.sh && chmod +x websocket.sh && ./websocket.sh
-wget https://raw.githubusercontent.com/kmardhex/anu/main/edu.sh && chmod +x edu.sh && screen -S edu ./edu.sh
+wget https://raw.githubusercontent.com/santzx45/anu/main/websocket.sh && chmod +x websocket.sh && ./websocket.sh
+wget https://raw.githubusercontent.com/santzx45/anu/main/edu.sh && chmod +x edu.sh && screen -S edu ./edu.sh
 rm -f /root/edu.sh
 rm -f /root/websocket.sh
 cd
@@ -257,52 +257,52 @@ netfilter-persistent reload
 
 # download script
 cd /usr/bin
-wget -O add-host "https://raw.githubusercontent.com/kmardhex/anu/main/add-host.sh"
-wget -O about "https://raw.githubusercontent.com/kmardhex/anu/main/about.sh"
-wget -O menu "https://raw.githubusercontent.com/kmardhex/anu/main/menu.sh"
-wget -O usernew "https://raw.githubusercontent.com/kmardhex/anu/main/usernew.sh"
-wget -O trial "https://raw.githubusercontent.com/kmardhex/anu/main/trial.sh"
-wget -O hapus "https://raw.githubusercontent.com/kmardhex/anu/main/hapus.sh"
-wget -O member "https://raw.githubusercontent.com/kmardhex/anu/main/member.sh"
-wget -O delete "https://raw.githubusercontent.com/kmardhex/anu/main/delete.sh"
-wget -O cek "https://raw.githubusercontent.com/kmardhex/anu/main/cek.sh"
-wget -O restart "https://raw.githubusercontent.com/kmardhex/anu/main/restart.sh"
-wget -O speedtest "https://raw.githubusercontent.com/kmardhex/anu/main/speedtest_cli.py"
-wget -O info "https://raw.githubusercontent.com/kmardhex/anu/main/info.sh"
-wget -O ram "https://raw.githubusercontent.com/kmardhex/anu/main/ram.sh"
-wget -O renew "https://raw.githubusercontent.com/kmardhex/anu/main/renew.sh"
-wget -O autokill "https://raw.githubusercontent.com/kmardhex/anu/main/autokill.sh"
-wget -O ceklim "https://raw.githubusercontent.com/kmardhex/anu/main/ceklim.sh"
-wget -O tendang "https://raw.githubusercontent.com/kmardhex/anu/main/tendang.sh"
-wget -O clear-log "https://raw.githubusercontent.com/kmardhex/anu/main/clear-log.sh"
-wget -O change-port "https://raw.githubusercontent.com/kmardhex/anu/main/change.sh"
-wget -O port-ovpn "https://raw.githubusercontent.com/kmardhex/anu/main/port-ovpn.sh"
-wget -O port-ssl "https://raw.githubusercontent.com/kmardhex/anu/main/port-ssl.sh"
-wget -O port-wg "https://raw.githubusercontent.com/kmardhex/anu/main/port-wg.sh"
-wget -O port-tr "https://raw.githubusercontent.com/kmardhex/anu/main/port-tr.sh"
-wget -O port-sstp "https://raw.githubusercontent.com/kmardhex/anu/main/port-sstp.sh"
-wget -O port-squid "https://raw.githubusercontent.com/kmardhex/anu/main/port-squid.sh"
-wget -O port-ws "https://raw.githubusercontent.com/kmardhex/anu/main/port-ws.sh"
-wget -O port-vless "https://raw.githubusercontent.com/kmardhex/anu/main/port-vless.sh"
-wget -O wbmn "https://raw.githubusercontent.com/kmardhex/anu/main/webmin.sh"
-wget -O xp "https://raw.githubusercontent.com/kmardhex/anu/main/xp.sh"
-wget -O kernel-updt "https://raw.githubusercontent.com/kmardhex/anu/main/kernel-update.sh"
-wget -O tessh "https://raw.githubusercontent.com/kmardhex/anu/main/tessh.sh"
-wget -O ssstp "https://raw.githubusercontent.com/kmardhex/anu/main/ssstp.sh"
-wget -O sssr "https://raw.githubusercontent.com/kmardhex/anu/main/sssr.sh"
-wget -O ltp "https://raw.githubusercontent.com/kmardhex/anu/main/ltp.sh"
-wget -O wgg "https://raw.githubusercontent.com/kmardhex/anu/main/wgg.sh"
-wget -O trj "https://raw.githubusercontent.com/kmardhex/anu/main/trj.sh"
-wget -O wss "https://raw.githubusercontent.com/kmardhex/anu/main/wss.sh"
-wget -O vls "https://raw.githubusercontent.com/kmardhex/anu/main/vls.sh"
-wget -O updatee "https://raw.githubusercontent.com/kmardhex/anu/main/updatee.sh"
-wget -O auto-reboot "https://raw.githubusercontent.com/kmardhex/anu/main/auto-reboot.sh"
-wget -O tr-mnt "https://raw.githubusercontent.com/kmardhex/anu/main/tr-mnt.sh"
-wget -O bbr "https://raw.githubusercontent.com/kmardhex/anu/main/bbr.sh"
-wget -O running "https://raw.githubusercontent.com/kmardhex/anu/main/running.sh"
-wget -O cff "https://raw.githubusercontent.com/kmardhex/anu/main/cff.sh"
-wget -O cfh "https://raw.githubusercontent.com/kmardhex/anu/main/cfh.sh"
-wget -O cfd "https://raw.githubusercontent.com/kmardhex/anu/main/cfd.sh"
+wget -O add-host "https://raw.githubusercontent.com/santzx45/anu/main/add-host.sh"
+wget -O about "https://raw.githubusercontent.com/santzx45/anu/main/about.sh"
+wget -O menu "https://raw.githubusercontent.com/santzx45/anu/main/menu.sh"
+wget -O usernew "https://raw.githubusercontent.com/santzx45/anu/main/usernew.sh"
+wget -O trial "https://raw.githubusercontent.com/santzx45/anu/main/trial.sh"
+wget -O hapus "https://raw.githubusercontent.com/santzx45/anu/main/hapus.sh"
+wget -O member "https://raw.githubusercontent.com/santzx45/anu/main/member.sh"
+wget -O delete "https://raw.githubusercontent.com/santzx45/anu/main/delete.sh"
+wget -O cek "https://raw.githubusercontent.com/santzx45/anu/main/cek.sh"
+wget -O restart "https://raw.githubusercontent.com/santzx45/anu/main/restart.sh"
+wget -O speedtest "https://raw.githubusercontent.com/santzx45/anu/main/speedtest_cli.py"
+wget -O info "https://raw.githubusercontent.com/santzx45/anu/main/info.sh"
+wget -O ram "https://raw.githubusercontent.com/santzx45/anu/main/ram.sh"
+wget -O renew "https://raw.githubusercontent.com/santzx45/anu/main/renew.sh"
+wget -O autokill "https://raw.githubusercontent.com/santzx45/anu/main/autokill.sh"
+wget -O ceklim "https://raw.githubusercontent.com/santzx45/anu/main/ceklim.sh"
+wget -O tendang "https://raw.githubusercontent.com/santzx45/anu/main/tendang.sh"
+wget -O clear-log "https://raw.githubusercontent.com/santzx45/anu/main/clear-log.sh"
+wget -O change-port "https://raw.githubusercontent.com/santzx45/anu/main/change.sh"
+wget -O port-ovpn "https://raw.githubusercontent.com/santzx45/anu/main/port-ovpn.sh"
+wget -O port-ssl "https://raw.githubusercontent.com/santzx45/anu/main/port-ssl.sh"
+wget -O port-wg "https://raw.githubusercontent.com/santzx45/anu/main/port-wg.sh"
+wget -O port-tr "https://raw.githubusercontent.com/santzx45/anu/main/port-tr.sh"
+wget -O port-sstp "https://raw.githubusercontent.com/santzx45/anu/main/port-sstp.sh"
+wget -O port-squid "https://raw.githubusercontent.com/santzx45/anu/main/port-squid.sh"
+wget -O port-ws "https://raw.githubusercontent.com/santzx45/anu/main/port-ws.sh"
+wget -O port-vless "https://raw.githubusercontent.com/santzx45/anu/main/port-vless.sh"
+wget -O wbmn "https://raw.githubusercontent.com/santzx45/anu/main/webmin.sh"
+wget -O xp "https://raw.githubusercontent.com/santzx45/anu/main/xp.sh"
+wget -O kernel-updt "https://raw.githubusercontent.com/santzx45/anu/main/kernel-update.sh"
+wget -O tessh "https://raw.githubusercontent.com/santzx45/anu/main/tessh.sh"
+wget -O ssstp "https://raw.githubusercontent.com/santzx45/anu/main/ssstp.sh"
+wget -O sssr "https://raw.githubusercontent.com/santzx45/anu/main/sssr.sh"
+wget -O ltp "https://raw.githubusercontent.com/santzx45/anu/main/ltp.sh"
+wget -O wgg "https://raw.githubusercontent.com/santzx45/anu/main/wgg.sh"
+wget -O trj "https://raw.githubusercontent.com/santzx45/anu/main/trj.sh"
+wget -O wss "https://raw.githubusercontent.com/santzx45/anu/main/wss.sh"
+wget -O vls "https://raw.githubusercontent.com/santzx45/anu/main/vls.sh"
+wget -O updatee "https://raw.githubusercontent.com/santzx45/anu/main/updatee.sh"
+wget -O auto-reboot "https://raw.githubusercontent.com/santzx45/anu/main/auto-reboot.sh"
+wget -O tr-mnt "https://raw.githubusercontent.com/santzx45/anu/main/tr-mnt.sh"
+wget -O bbr "https://raw.githubusercontent.com/santzx45/anu/main/bbr.sh"
+wget -O running "https://raw.githubusercontent.com/santzx45/anu/main/running.sh"
+wget -O cff "https://raw.githubusercontent.com/santzx45/anu/main/cff.sh"
+wget -O cfh "https://raw.githubusercontent.com/santzx45/anu/main/cfh.sh"
+wget -O cfd "https://raw.githubusercontent.com/santzx45/anu/main/cfd.sh"
 chmod +x add-host
 chmod +x menu
 chmod +x usernew
