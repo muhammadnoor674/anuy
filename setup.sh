@@ -110,7 +110,7 @@ echo "   - Telegram                : t.me/s4nX4z"  | tee -a log-install.txt
 echo "   - Instagram               : *"  | tee -a log-install.txt
 echo "   - Whatsapp                : *"  | tee -a log-install.txt
 echo "   - Facebook                : *" | tee -a log-install.txt
-echo "------------------Script Created By SantzX Vpn Store-----------------" | tee -a log-install.txt
+echo "------------------Script Remake By SantzX Vpn Store-----------------" | tee -a log-install.txt
 echo ""
 echo " Server Reboot 5 Detik"
 sleep 5
