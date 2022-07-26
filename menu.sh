@@ -21,7 +21,7 @@ CITY=$(curl -s ipinfo.io/city )
 WKT=$(curl -s ipinfo.io/timezone )
 IPVPS=$(curl -s ipv4.icanhazip.com )
 	echo "--------------- Welcome To Premium Script Menu ---------------"
-	echo "------------------------ Remake By SantzX Vpn Store -----------------------"
+	echo "------------------------ Remake By Anuy za -----------------------"
 	echo " "
 	cname=$( awk -F: '/model name/ {name=$2} END {print name}' /proc/cpuinfo )
 	cores=$( awk -F: '/model name/ {core++} END {print core}' /proc/cpuinfo )
@@ -47,21 +47,21 @@ echo -e ""
 
 echo -e "Menu Utama" | lolcat -a -d 10
 
-echo -e " 1.  Control Panel SSH & OVPN"
+echo -e " 1.  SSH & OVPN"
 
-echo -e " 2.  Control Panel Wireguard"
+echo -e " 2.  Wireguard"
 
-echo -e " 3.  Control Panel L2TP & PPTP"
+echo -e " 3.  L2TP & PPTP"
 
-echo -e " 4.  Control Panel SSTP"
+echo -e " 4.  SSTP"
 
-echo -e " 5.  Control Panel SSR & Shadowsocks"
+echo -e " 5.  SSR & Shadowsocks"
 
-echo -e " 6.  Control Panel Vmess/V2ray"
+echo -e " 6.  Vmess/V2ray"
 
-echo -e " 7.  Control Panel Vless"
+echo -e " 7.  Vless"
 
-echo -e " 8.  Control Panel Trojan"
+echo -e " 8.  Trojan"
 
 echo -e ""
 
