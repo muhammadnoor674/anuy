@@ -1,4 +1,4 @@
-#!/bin/bash
+Ini#!/bin/bash
 
 clear
 echo -e "=================================================" | lolcat
@@ -14,7 +14,7 @@ echo -e "#-----------------------------------------------#"
 echo -e "#                                      #"
 echo -e "# Allah                                 #"
 echo -e "# My Family                                     #"
-echo -e "# My Subscribers                                      #"
+echo -e "#My Subscribers                                      #"
 echo -e "# Santz                                        #"
 echo -e "#-----------------------------------------------#"
 echo -e "================================================="
