@@ -9,7 +9,7 @@ DOMAIN=myvpnpremium.my.id
 sub=$(</dev/urandom tr -dc a-z0-9 | head -c4)
 SUB_DOMAIN=${sub}.myvpnpremium.my.id
 CF_ID=santosomedhy67@gmail.com
-CF_KEY=ef6dbd9c2b43d0c1dbc4eb2e266ef9849cdba
+CF_KEY=17657f6c90d1b6fb47329647878c451b
 set -euo pipefail
 IP=$(wget -qO- ipinfo.io/ip);
 echo "Updating DNS for ${SUB_DOMAIN}..."
