@@ -44,7 +44,7 @@ $link
 If you want to restore data, please enter the link above.
 
 Thank You For Using Our Services.
-@Copyright 2022 By SantzX Vpn Store" | mail -s "Backup Data" $email
+@Copyright 2022 By Nyari Gratisan" | mail -s "Backup Data" $email
 rm -rf /root/backup
 rm -r /root/$IP-$date.zip
 echo "Done"
