@@ -34,7 +34,7 @@ cat>/etc/v2ray/$user-none.json<<EOF
       {
       "v": "2",
       "ps": "${user}",
-      "add": ".santzx.com",
+      "add": ".my.vpnpremium.my.id",
       "port": "${none}",
       "id": "${uuid}",
       "aid": "0",
@@ -62,7 +62,7 @@ echo -e "id             : ${uuid}"
 echo -e "alterId        : 0"
 echo -e "Security       : auto"
 echo -e "network        : ws"
-echo -e "path           : /SantzXteam"
+echo -e "path           : /NyariGratisan"
 echo -e "================================="
 echo -e "link none TLS  : ${vmesslink2}"
 echo -e "================================="
