@@ -5,9 +5,9 @@ NC='\e[0m'
 MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
 apt install jq curl -y
-DOMAIN=santzx.com
+DOMAIN=myvpnpremium.my.id
 sub=$(</dev/urandom tr -dc a-z0-9 | head -c4)
-SUB_DOMAIN=${sub}.santzx.com
+SUB_DOMAIN=${sub}.myvpnpremium.my.id
 CF_ID=santosomedhy67@gmail.com
 CF_KEY=ef6dbd9c2b43d0c1dbc4eb2e266ef9849cdba
 set -euo pipefail
