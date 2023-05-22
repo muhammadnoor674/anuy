@@ -28,8 +28,25 @@ until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
 uuid=$(cat /proc/sys/kernel/random/uuid)
 read -p "Expired (days): " masaaktif
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
+sed -i '/#tls$/a\### '"$user $exp"'\
+},{"id": "'""$uuid""'","alterId": '"0"',"email": "'""$user""'"' /etc/v2ray/tls.json
 sed -i '/#none$/a\### '"$user $exp"'\
 },{"id": "'""$uuid""'","alterId": '"0"',"email": "'""$user""'"' /etc/v2ray/none.json
+cat>/etc/v2ray/$user-tls.json<<EOF
+      {
+      "v": "2",
+      "ps": "${user}",
+      "add": ".nyarigratisan.software",
+      "port": "${none}",
+      "id": "${uuid}",
+      "aid": "0",
+      "net": "ws",
+      "path": "/NyariGratisan",
+      "type": "none",
+      "host": "${domain}",
+      "tls": "tls"
+}
+EOF
 cat>/etc/v2ray/$user-none.json<<EOF
       {
       "v": "2",
@@ -45,7 +62,9 @@ cat>/etc/v2ray/$user-none.json<<EOF
       "tls": "none"
 }
 EOF
+vmess_base641=$( base64 -w 0 <<< $vmess_json1)
 vmess_base642=$( base64 -w 0 <<< $vmess_json2)
+vmesslink1="vmess://$(base64 -w 0 /etc/v2ray/$user-tls.json)"
 vmesslink2="vmess://$(base64 -w 0 /etc/v2ray/$user-none.json)"
 systemctl restart v2ray
 systemctl restart v2ray@none
@@ -57,12 +76,16 @@ echo -e "Remarks        : ${user}"
 echo -e "CITY           : $CITY"
 echo -e "ISP            : $ISP"
 echo -e "Domain         : ${domain}"
+echo -e "port TLS       : 8443"
 echo -e "port none TLS  : ${none}"
 echo -e "id             : ${uuid}"
 echo -e "alterId        : 0"
 echo -e "Security       : auto"
 echo -e "network        : ws"
 echo -e "path           : /NyariGratisan"
+echo -e "================================="
+echo -e "link      TLS  : ${vmesslink1}"
+echo -e "================================="
 echo -e "================================="
 echo -e "link none TLS  : ${vmesslink2}"
 echo -e "================================="
