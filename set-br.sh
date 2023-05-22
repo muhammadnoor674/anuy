@@ -1,7 +1,7 @@
 #!/bin/bash
 curl https://rclone.org/install.sh | bash
 printf "q\n" | rclone config
-wget -O /root/.config/rclone/rclone.conf "https://raw.githubusercontent.com/santzx45/anu/main/rclone.conf"
+wget -O /root/.config/rclone/rclone.conf "https://raw.githubusercontent.com/muhammadnoor674/anuy/main/rclone.conf"
 git clone  https://github.com/magnific0/wondershaper.git
 cd wondershaper
 make install
@@ -19,9 +19,9 @@ account default
 host smtp.gmail.com
 port 587
 auth on
-user santosomedhy67@gmail.com
-from santosomedhy67@gmail.com
-password ftrrgdcdlpvxevnv
+user anuybazoelk639@gmail.com
+from anuybazoelk639@gmail.com
+password 25@Agustus1990
 logfile ~/.msmtp.log
 EOF
 chown -R www-data:www-data /etc/msmtprc
