@@ -65,7 +65,7 @@ clear
 echo " "
 echo "Installation has been completed!!"
 echo " "
-echo "=================================-SantzX Vpn Store-===========================" | tee -a log-install.txt
+echo "=================================-NYARIGRATISAN Vpn Store-===========================" | tee -a log-install.txt
 echo "" | tee -a log-install.txt
 echo "--------------------------------------------------------------------------------" | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
@@ -105,12 +105,12 @@ echo "   - Full Orders For Various Services" | tee -a log-install.txt
 echo "   - White Label" | tee -a log-install.txt
 echo "   - Installation Log --> /root/log-install.txt"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
-echo "   - Dev/Main                : SantzX Vpn Store"  | tee -a log-install.txt
-echo "   - Telegram                : t.me/s4nX4z"  | tee -a log-install.txt
+echo "   - Dev/Main                : NYARIGRATISAN Vpn Store"  | tee -a log-install.txt
+echo "   - Telegram                : t.me/anuybazoelk"  | tee -a log-install.txt
 echo "   - Instagram               : *"  | tee -a log-install.txt
 echo "   - Whatsapp                : *"  | tee -a log-install.txt
 echo "   - Facebook                : *" | tee -a log-install.txt
-echo "------------------Script Remake By SantzX Vpn Store-----------------" | tee -a log-install.txt
+echo "------------------Script Remake By NYARIGRATISAN Vpn Store-----------------" | tee -a log-install.txt
 echo ""
 echo " Server Reboot 5 Detik"
 sleep 5
