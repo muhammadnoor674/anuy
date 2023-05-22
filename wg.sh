@@ -26,7 +26,7 @@ echo -e "${Info} Wireguard VPS AutoScript by Mardhex"
 # Detect public IPv4 address and pre-fill for the user
 
 # Detect public interface and pre-fill for the user
-SERVER_PUB_NIC=$(ip -o $ANU -4 route show to default | awk '{print $5}');
+SERVER_PUB_NIC=$(ip -o $ANUY -4 route show to default | awk '{print $5}');
 
 # Install WireGuard tools and module
 	if [[ $OS == 'ubuntu' ]]; then
