@@ -14,8 +14,8 @@ sudo lsof -t -i tcp:80 -s tcp:listen | sudo xargs kill
 cd /root/
 wget -O acme.sh https://raw.githubusercontent.com/acmesh-official/acme.sh/master/acme.sh
 bash acme.sh --install >/dev/null 2>&1
-bash acme.sh --register-account -m santosomedhy67@gmail.com
-wget https://get.acme.sh >/dev/null 2>&1 | sh -s email=santosomedhy67@gmail.com
+bash acme.sh --register-account -m anuybazoelk639@gmail.com
+wget https://get.acme.sh >/dev/null 2>&1 | sh -s email=anuybazoelk639@gmail.com
 /root/.acme.sh/acme.sh --upgrade --auto-upgrade >/dev/null 2>&1
 /root/.acme.sh/acme.sh --set-default-ca --server letsencrypt >/dev/null 2>&1
 /root/.acme.sh/acme.sh --issue -d $domain --standalone --force --keylength ec-256
@@ -28,9 +28,9 @@ wget https://get.acme.sh >/dev/null 2>&1 | sh -s email=santosomedhy67@gmail.com
 /etc/init.d/cron restart
 /etc/init.d/nginx restart
 /etc/init.d/squid restart
-screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 1000
-screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 1000
-screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 1000
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500
+screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 500
 systemctl restart v2ray@none
 systemctl restart v2ray
 systemctl restart trojan
