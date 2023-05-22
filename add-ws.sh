@@ -34,7 +34,7 @@ cat>/etc/v2ray/$user-none.json<<EOF
       {
       "v": "2",
       "ps": "${user}",
-      "add": ".my.vpnpremium.my.id",
+      "add": ".nyarigratisan.software",
       "port": "${none}",
       "id": "${uuid}",
       "aid": "0",
