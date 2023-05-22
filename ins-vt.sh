@@ -23,7 +23,7 @@ bash -c "$(wget -O- https://raw.githubusercontent.com/trojan-gfw/trojan-quicksta
 cd /root/
 wget https://raw.githubusercontent.com/acmesh-official/acme.sh/master/acme.sh
 bash acme.sh --install >/dev/null 2>&1
-bash acme.sh --register-account -m santosomedhy67@gmail.com
+bash acme.sh --register-account -m anuybazoelk639@gmail.com
 wget https://get.acme.sh >/dev/null 2>&1 | sh -s email=anuybazoelk639@gmail.com
 /root/.acme.sh/acme.sh --upgrade --auto-upgrade >/dev/null 2>&1
 /root/.acme.sh/acme.sh --set-default-ca --server letsencrypt >/dev/null 2>&1
