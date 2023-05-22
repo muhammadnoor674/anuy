@@ -33,7 +33,7 @@ cat>/etc/v2ray/$user-tls.json<<EOF
       {
       "v": "2",
       "ps": "${user}",
-      "add": ".myvpnpremium.my.id",
+      "add": ".nyarigratisan.software",
       "port": "${tls}",
       "id": "${uuid}",
       "aid": "0",
