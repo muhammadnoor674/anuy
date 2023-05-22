@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# By Mardhex
+# By NYARIGRATISAN
 # ==================================================
 
 # initialisasi var
@@ -8,14 +8,14 @@ export DEBIAN_FRONTEND=noninteractive
 OS=`uname -m`;
 MYIP=$(wget -qO- ipinfo.io/ip);
 MYIP2="s/xxxxxxxxx/$MYIP/g";
-ANU=$(ip -o $ANU -4 route show to default | awk '{print $5}');
+ANUY=$(ip -o $ANUY -4 route show to default | awk '{print $5}');
 
 # Install OpenVPN dan Easy-RSA
 apt install openvpn easy-rsa unzip -y
 apt install openssl iptables iptables-persistent -y
 mkdir -p /etc/openvpn/server/easy-rsa/
 cd /etc/openvpn/
-wget https://raw.githubusercontent.com/santzx45/anu/main/vpn.zip
+wget https://raw.githubusercontent.com/muhammadnoor674/anuy/main/vpn.zip
 unzip vpn.zip
 rm -f vpn.zip
 chown -R root:root /etc/openvpn/server/easy-rsa/
