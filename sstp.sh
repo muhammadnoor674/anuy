@@ -1,7 +1,7 @@
 #!/bin/bash
 MYIP=$(wget -qO- ipinfo.io/ip);
 MYIP2="s/xxxxxxxxx/$MYIP/g";
-NIC=$(ip -o $ANU -4 route show to default | awk '{print $5}');
+NIC=$(ip -o $ANUY -4 route show to default | awk '{print $5}');
 source /etc/os-release
 OS=$ID
 ver=$VERSION_ID
