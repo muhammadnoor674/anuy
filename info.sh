@@ -4,4 +4,4 @@ clear
 neofetch
 cat /root/log-install.txt
 echo ""
-echo "AutoScript By SantzX Vpn Store"
+echo "AutoScript By NYARIGRATISAN Vpn Store"
