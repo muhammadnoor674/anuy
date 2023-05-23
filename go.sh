@@ -335,25 +335,25 @@ User=root
 CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 NoNewPrivileges=true
-ExecStart=/usr/bin/v2ray/v2ray -config /etc/v2ray/config.json
+ExecStart=/usr/bin/v2ray -config /etc/v2ray/config.json
 Restart=on-failure
 
 [Install]
 WantedBy=multi-user.target
 EOF
-cat > /etc/systemd/system/v2ray.service <<-EOF
+cat > /etc/systemd/system/v2ray@.service <<-EOF
 [Unit]
 Description=V2Ray Service
 After=network.target nss-lookup.target
  
 [Service]
-User=root
+User=nobody
 CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 NoNewPrivileges=true
-ExecStart=/usr/bin/v2ray/v2ray -config /etc/v2ray/%i.json
+ExecStart=/usr/bin/v2ray -config /etc/v2ray/%i.json
 Restart=on-failure
- 
+
 [Install]
 WantedBy=multi-user.target
 EOF
