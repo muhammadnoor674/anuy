@@ -62,7 +62,7 @@ echo -e "GET / HTTP/1.1[crlf]Host: ${domain}[crlf]Upgrade: websocket[crlf][crlf]
 echo -e "==============================="
 echo -e "PAYLOAD WSTLS : "
 echo -e "================================"
-echo -e "GET wss://Bug.com/ HTTP/1.1[crlf]Host: ${domain}[crlf]User-Agent: [ua][crlf]Upgrade: websocket[crlf][crlf]"
+echo -e "GET wss://${domain}/ HTTP/1.1[crlf]Host: ${domain}[crlf]User-Agent: [ua][crlf]Upgrade: websocket[crlf][crlf]"
 echo -e "==============================="
 echo -e "Link Download Ovpn"
 echo -e "==============================="
