@@ -341,7 +341,7 @@ Restart=on-failure
 [Install]
 WantedBy=multi-user.target
 EOF
-cat > /etc/systemd/system/v2ray@.service <<-EOF
+cat > /etc/systemd/system/v2ray.service <<-EOF
 [Unit]
 Description=V2Ray Service
 After=network.target nss-lookup.target
