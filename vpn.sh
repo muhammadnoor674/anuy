@@ -121,8 +121,8 @@ cp /etc/openvpn/ssl.ovpn /home/vps/public_html/ssl.ovpn
 
 #firewall untuk memperbolehkan akses UDP dan akses jalur TCP
 
-iptables -t nat -I POSTROUTING -s 10.6.0.0/24 -o $ANU -j MASQUERADE
-iptables -t nat -I POSTROUTING -s 10.7.0.0/24 -o $ANU -j MASQUERADE
+iptables -t nat -I POSTROUTING -s 10.6.0.0/24 -o $ANUY -j MASQUERADE
+iptables -t nat -I POSTROUTING -s 10.7.0.0/24 -o $ANUY -j MASQUERADE
 iptables-save > /etc/iptables.up.rules
 chmod +x /etc/iptables.up.rules
 
