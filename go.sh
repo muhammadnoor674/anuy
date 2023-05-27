@@ -2,10 +2,14 @@
 
 # // MY IPVPS
 export MYIP=$(curl -sS ipv4.icanhazip.com)
+if [ -f "/etc/v2ray/domain" ]; then
+echo "Script Sukses Terinstall"
+exit 0
+fi
 clear
 
 # // EMAIL & DOMAIN
-export emailcf=$(cat /usr/local/etc/xray/email)
+export emailcf=$(cat /usr/local/etc/v2ray/domain)
 export domain=$(cat /root/domain)
 
 apt install iptables iptables-persistent -y
